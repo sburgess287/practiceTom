@@ -4,7 +4,7 @@ var router = express.Router();
 // Declare the Kitten schema and require models file
 const { Kitten } = require('./models');
 
-// use the router
+// use the router on GET and POST endpoints
 router.get('/', function(req, res){
   Kitten.find()
     // .then(kittens => {
@@ -21,7 +21,7 @@ router.get('/', function(req, res){
 })
 
 router.post('/', express.json(), function(req, res){
-  // this is showing kitten undefined
+  
   Kitten.create({
     name: req.body.name
   })
